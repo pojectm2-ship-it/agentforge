@@ -1,264 +1,430 @@
-const pageStyles: React.CSSProperties = {
-  background: "radial-gradient(circle at top, #1f2937 0, #020617 55%, #000000 100%)",
-  minHeight: "100vh",
-  color: "white",
-  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-};
+export default function HomePage() {
+  const pageStyles: React.CSSProperties = {
+    background:
+      "radial-gradient(circle at top, #1f2937 0, #020617 55%, #000000 100%)",
+    minHeight: "100vh",
+    color: "white",
+    fontFamily:
+      "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+  };
 
-const containerStyles: React.CSSProperties = {
-  maxWidth: "1100px",
-  margin: "0 auto",
-  padding: "3rem 1.5rem 4rem",
-};
+  const containerStyles: React.CSSProperties = {
+    maxWidth: "1100px",
+    margin: "0 auto",
+    padding: "3rem 1.5rem 4rem",
+  };
 
-const heroStyles: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "row",
-  gap: "3rem",
-  alignItems: "center",
-  justifyContent: "space-between",
-};
+  const topPillStyles: React.CSSProperties = {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: ".6rem",
+    padding: ".45rem .85rem",
+    borderRadius: "999px",
+    border: "1px solid rgba(255,255,255,.12)",
+    background: "rgba(255,255,255,.04)",
+    backdropFilter: "blur(10px)",
+    fontSize: ".9rem",
+    color: "rgba(255,255,255,.85)",
+  };
 
-const leftStyles: React.CSSProperties = {
-  flex: 1.3,
-};
+  const heroStyles: React.CSSProperties = {
+    display: "flex",
+    flexDirection: "row",
+    gap: "3rem",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingTop: "2.25rem",
+  };
 
-const rightStyles: React.CSSProperties = {
-  flex: 1,
-};
+  const leftColStyles: React.CSSProperties = {
+    flex: 1,
+    minWidth: 0,
+  };
 
-const badgeStyles: React.CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  gap: "0.4rem",
-  padding: "0.35rem 0.75rem",
-  borderRadius: "999px",
-  backgroundColor: "rgba(148, 163, 184, 0.15)",
-  border: "1px solid rgba(148, 163, 184, 0.4)",
-  fontSize: "0.8rem",
-  letterSpacing: "0.06em",
-  textTransform: "uppercase",
-  color: "#e5e7eb",
-};
+  const rightColStyles: React.CSSProperties = {
+    width: "420px",
+    maxWidth: "100%",
+    borderRadius: "22px",
+    border: "1px solid rgba(255,255,255,.10)",
+    background: "rgba(255,255,255,.04)",
+    backdropFilter: "blur(12px)",
+    padding: "1.25rem 1.25rem 1.1rem",
+    boxShadow: "0 20px 60px rgba(0,0,0,.45)",
+  };
 
-const titleStyles: React.CSSProperties = {
-  fontSize: "3rem",
-  lineHeight: 1.1,
-  fontWeight: 700,
-  margin: "1.2rem 0 0.75rem",
-};
+  const titleStyles: React.CSSProperties = {
+    fontSize: "clamp(2.6rem, 4.6vw, 4.2rem)",
+    lineHeight: 1.05,
+    margin: "1rem 0 1rem",
+    letterSpacing: "-0.03em",
+    fontWeight: 800,
+  };
 
-const gradientWordStyles: React.CSSProperties = {
-  background: "linear-gradient(90deg, #22d3ee, #a855f7)",
-  WebkitBackgroundClip: "text",
-  color: "transparent",
-};
+  const gradientWordStyles: React.CSSProperties = {
+    backgroundImage: "linear-gradient(90deg, #22d3ee, #3b82f6, #a78bfa)",
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+    color: "transparent",
+  };
 
-const subtitleStyles: React.CSSProperties = {
-  fontSize: "1.05rem",
-  color: "#9ca3af",
-  maxWidth: "32rem",
-};
+  const subtitleStyles: React.CSSProperties = {
+    fontSize: "1.15rem",
+    lineHeight: 1.6,
+    color: "rgba(255,255,255,.72)",
+    maxWidth: "54ch",
+    margin: "0 0 1.6rem",
+  };
 
-const ctaRowStyles: React.CSSProperties = {
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "1rem",
-  marginTop: "1.8rem",
-  alignItems: "center",
-};
+  const ctaRowStyles: React.CSSProperties = {
+    display: "flex",
+    gap: "1rem",
+    alignItems: "center",
+    flexWrap: "wrap",
+    marginBottom: "1.8rem",
+  };
 
-const primaryButtonStyles: React.CSSProperties = {
-  padding: "0.9rem 1.8rem",
-  borderRadius: "999px",
-  border: "none",
-  backgroundImage: "linear-gradient(135deg, #22d3ee, #a855f7)",
-  color: "#020617",
-  fontWeight: 600,
-  fontSize: "0.95rem",
-  cursor: "pointer",
-  boxShadow: "0 12px 30px rgba(15, 118, 110, 0.45)",
-};
+  const primaryButtonStyles: React.CSSProperties = {
+    padding: ".95rem 1.25rem",
+    borderRadius: "14px",
+    border: "none",
+    cursor: "pointer",
+    fontWeight: 700,
+    color: "#081018",
+    backgroundImage: "linear-gradient(90deg, #22d3ee, #3b82f6, #a78bfa)",
+    boxShadow: "0 12px 30px rgba(59,130,246,.18)",
+  };
 
-const secondaryLinkStyles: React.CSSProperties = {
-  fontSize: "0.9rem",
-  color: "#e5e7eb",
-  textDecoration: "underline",
-  textDecorationColor: "rgba(148, 163, 184, 0.6)",
-  cursor: "pointer",
-};
+  const secondaryLinkStyles: React.CSSProperties = {
+    color: "rgba(255,255,255,.85)",
+    textDecoration: "underline",
+    cursor: "pointer",
+    fontWeight: 600,
+  };
 
-const statsRowStyles: React.CSSProperties = {
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "1.5rem",
-  marginTop: "2rem",
-  fontSize: "0.8rem",
-  color: "#9ca3af",
-};
+  const statsRowStyles: React.CSSProperties = {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+    gap: "1.2rem",
+    marginTop: "1.6rem",
+  };
 
-const statItemStyles: React.CSSProperties = {
-  minWidth: "8rem",
-};
+  const statItemStyles: React.CSSProperties = {
+    borderRadius: "18px",
+    border: "1px solid rgba(255,255,255,.10)",
+    background: "rgba(255,255,255,.03)",
+    padding: "1rem 1rem .95rem",
+  };
 
-const statNumberStyles: React.CSSProperties = {
-  fontSize: "1.1rem",
-  fontWeight: 600,
-  color: "#e5e7eb",
-};
+  const statNumberStyles: React.CSSProperties = {
+    fontSize: "1.15rem",
+    fontWeight: 800,
+    marginBottom: ".25rem",
+  };
 
-const cardStyles: React.CSSProperties = {
-  background:
-    "radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 55%), rgba(15,23,42,0.9)",
-  borderRadius: "1.25rem",
-  border: "1px solid rgba(148, 163, 184, 0.45)",
-  padding: "1.5rem 1.7rem",
-  boxShadow: "0 18px 45px rgba(15,23,42,0.8)",
-};
+  const statLabelStyles: React.CSSProperties = {
+    color: "rgba(255,255,255,.70)",
+    fontSize: ".95rem",
+    lineHeight: 1.35,
+  };
 
-const cardHeaderStyles: React.CSSProperties = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: "1rem",
-  fontSize: "0.8rem",
-  color: "#9ca3af",
-};
+  const sectionStyles: React.CSSProperties = {
+    marginTop: "3.2rem",
+    paddingTop: "1.6rem",
+    borderTop: "1px solid rgba(255,255,255,.08)",
+  };
 
-const chipStyles: React.CSSProperties = {
-  padding: "0.2rem 0.7rem",
-  borderRadius: "999px",
-  border: "1px solid rgba(148,163,184,0.6)",
-};
+  const sectionTitleStyles: React.CSSProperties = {
+    fontSize: "1.4rem",
+    fontWeight: 800,
+    margin: "0 0 .65rem",
+    letterSpacing: "-0.01em",
+  };
 
-const stepListStyles: React.CSSProperties = {
-  listStyle: "none",
-  padding: 0,
-  margin: "0.5rem 0 0",
-  fontSize: "0.83rem",
-  color: "#e5e7eb",
-};
+  const sectionSubtitleStyles: React.CSSProperties = {
+    color: "rgba(255,255,255,.72)",
+    lineHeight: 1.6,
+    margin: "0 0 1.25rem",
+    maxWidth: "80ch",
+  };
 
-const stepItemStyles: React.CSSProperties = {
-  marginBottom: "0.6rem",
-  display: "flex",
-  gap: "0.5rem",
-  alignItems: "flex-start",
-};
+  const gridStyles: React.CSSProperties = {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+    gap: "1.2rem",
+  };
 
-const bulletStyles: React.CSSProperties = {
-  width: "0.55rem",
-  height: "0.55rem",
-  borderRadius: "999px",
-  marginTop: "0.3rem",
-  background:
-    "radial-gradient(circle at 30% 30%, #22d3ee, #a855f7)",
-};
+  const cardStyles: React.CSSProperties = {
+    borderRadius: "18px",
+    border: "1px solid rgba(255,255,255,.10)",
+    background: "rgba(255,255,255,.03)",
+    padding: "1.05rem 1.05rem 1rem",
+  };
 
-const footerStyles: React.CSSProperties = {
-  marginTop: "3rem",
-  borderTop: "1px solid rgba(31,41,55,0.9)",
-  paddingTop: "1.5rem",
-  fontSize: "0.8rem",
-  color: "#6b7280",
-  display: "flex",
-  justifyContent: "space-between",
-  flexWrap: "wrap",
-  gap: "0.8rem",
-};
+  const cardTitleStyles: React.CSSProperties = {
+    fontWeight: 800,
+    margin: "0 0 .35rem",
+  };
 
-export default function Home() {
+  const cardTextStyles: React.CSSProperties = {
+    color: "rgba(255,255,255,.72)",
+    lineHeight: 1.55,
+    margin: 0,
+  };
+
+  const stepStyles: React.CSSProperties = {
+    display: "grid",
+    gridTemplateColumns: "80px 1fr",
+    gap: "1rem",
+    padding: "1rem",
+    borderRadius: "18px",
+    border: "1px solid rgba(255,255,255,.10)",
+    background: "rgba(255,255,255,.03)",
+    marginBottom: "1rem",
+  };
+
+  const stepBadgeStyles: React.CSSProperties = {
+    width: "80px",
+    height: "80px",
+    borderRadius: "18px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: 900,
+    background: "rgba(255,255,255,.06)",
+    border: "1px solid rgba(255,255,255,.10)",
+    color: "rgba(255,255,255,.90)",
+  };
+
+  const miniPillStyles: React.CSSProperties = {
+    display: "inline-flex",
+    alignItems: "center",
+    padding: ".35rem .65rem",
+    borderRadius: "999px",
+    border: "1px solid rgba(255,255,255,.12)",
+    background: "rgba(255,255,255,.04)",
+    color: "rgba(255,255,255,.85)",
+    fontSize: ".85rem",
+    fontWeight: 650,
+  };
+
+  const listStyles: React.CSSProperties = {
+    margin: ".75rem 0 0",
+    paddingLeft: "1.15rem",
+    color: "rgba(255,255,255,.75)",
+    lineHeight: 1.55,
+  };
+
+  const footerCtaStyles: React.CSSProperties = {
+    marginTop: "3.2rem",
+    borderRadius: "22px",
+    border: "1px solid rgba(255,255,255,.10)",
+    background:
+      "linear-gradient(135deg, rgba(34,211,238,.10), rgba(59,130,246,.08), rgba(167,139,250,.10))",
+    padding: "1.6rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "1rem",
+    flexWrap: "wrap",
+  };
+
+  const footerCtaTitle: React.CSSProperties = {
+    fontSize: "1.25rem",
+    fontWeight: 900,
+    margin: 0,
+    letterSpacing: "-0.01em",
+  };
+
+  const footerCtaText: React.CSSProperties = {
+    margin: ".35rem 0 0",
+    color: "rgba(255,255,255,.78)",
+    lineHeight: 1.5,
+    maxWidth: "70ch",
+  };
+
   return (
-    <main style={pageStyles}>
+    <div style={pageStyles}>
       <div style={containerStyles}>
-        {/* HERO */}
-        <div style={heroStyles}>
-          <section style={leftStyles}>
-            <div style={badgeStyles}>
-              <span>⚡ Agent Marketplace</span>
-              <span style={{ opacity: 0.7 }}>Build · Sell · Scale</span>
-            </div>
+        <div style={topPillStyles}>
+          ⚡ <strong style={{ fontWeight: 800 }}>AI WORKFORCE</strong>{" "}
+          <span style={{ opacity: 0.75 }}>• replace work • scale revenue</span>
+        </div>
 
+        <div style={heroStyles}>
+          <div style={leftColStyles}>
             <h1 style={titleStyles}>
-              Lancia <span style={gradientWordStyles}>agenti AI</span>{" "}
-              pronti a vendere in poche ore.
+              Your AI Workforce.{" "}
+              <span style={gradientWordStyles}>Built to scale</span> your business.
             </h1>
 
             <p style={subtitleStyles}>
-              AgentForge è la piattaforma per creare, testare e monetizzare
-              agenti AI senza un team di sviluppatori. Tu porti l&apos;idea,
-              noi ti diamo l&apos;infrastruttura.
+              We build autonomous AI agents that take over repetitive workflows,
+              capture leads, and ship outcomes—so your team stays lean while revenue
+              scales.
             </p>
 
             <div style={ctaRowStyles}>
-              <button style={primaryButtonStyles}>Inizia gratis</button>
-              <span style={secondaryLinkStyles}>Guarda un esempio di agente →</span>
+              <button style={primaryButtonStyles}>Get your AI system</button>
+              <span style={secondaryLinkStyles}>See how it works →</span>
             </div>
 
             <div style={statsRowStyles}>
               <div style={statItemStyles}>
-                <div style={statNumberStyles}>15 min</div>
-                <div>per creare il tuo primo agente guidato</div>
+                <div style={statNumberStyles}>48h</div>
+                <div style={statLabelStyles}>
+                  first agent deployed (pilot-ready, not a prototype)
+                </div>
               </div>
               <div style={statItemStyles}>
-                <div style={statNumberStyles}>0€ setup</div>
-                <div>paghi solo quando gli agenti iniziano a lavorare</div>
+                <div style={statNumberStyles}>0 hires</div>
+                <div style={statLabelStyles}>
+                  automate without adding headcount or complex dev cycles
+                </div>
               </div>
               <div style={statItemStyles}>
-                <div style={statNumberStyles}>Pronto per Stripe</div>
-                <div>integrazione pensata per monetizzare da subito</div>
+                <div style={statNumberStyles}>ROI-first</div>
+                <div style={statLabelStyles}>
+                  build only what pays back (tracked and measurable)
+                </div>
               </div>
             </div>
-          </section>
+          </div>
 
-          {/* CARD DI ANTEPRIMA */}
-          <aside style={rightStyles}>
-            <div style={cardStyles}>
-              <div style={cardHeaderStyles}>
-                <span>Anteprima agente</span>
-                <span style={chipStyles}>Nova · Sales Assistant</span>
+          <div style={rightColStyles}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ color: "rgba(255,255,255,.70)", fontWeight: 700 }}>
+                Live agent preview
               </div>
+              <span style={miniPillStyles}>Nova • Sales Assistant</span>
+            </div>
 
-              <ul style={stepListStyles}>
-                <li style={stepItemStyles}>
-                  <span style={bulletStyles} />
-                  <span>
-                    Definisci <strong>ruolo</strong>, tono di voce e
-                    confini dell&apos;agente.
-                  </span>
+            <div style={{ marginTop: "1rem" }}>
+              <ul style={listStyles}>
+                <li>
+                  Define role, tone, and boundaries to match your brand and compliance.
                 </li>
-                <li style={stepItemStyles}>
-                  <span style={bulletStyles} />
-                  <span>
-                    Collega le tue <strong>fonti</strong>: documenti, offerte,
-                    listini, FAQ.
-                  </span>
+                <li>
+                  Connect your sources: FAQs, offers, docs, product sheets, policies.
                 </li>
-                <li style={stepItemStyles}>
-                  <span style={bulletStyles} />
-                  <span>
-                    Pubblica l&apos;agente su <strong>landing page</strong> o
-                    embed sul tuo sito.
-                  </span>
+                <li>
+                  Deploy on your site as a widget or dedicated landing page.
                 </li>
-                <li style={stepItemStyles}>
-                  <span style={bulletStyles} />
-                  <span>
-                    Traccia conversazioni, <strong>lead</strong> e
-                    performance in un unico pannello.
-                  </span>
+                <li>
+                  Track leads, conversations, and performance in one dashboard.
                 </li>
               </ul>
             </div>
-          </aside>
+
+            <div
+              style={{
+                marginTop: "1.15rem",
+                padding: ".95rem",
+                borderRadius: "16px",
+                border: "1px solid rgba(255,255,255,.10)",
+                background: "rgba(0,0,0,.25)",
+                color: "rgba(255,255,255,.78)",
+                lineHeight: 1.5,
+                fontSize: ".95rem",
+              }}
+            >
+              <strong style={{ color: "rgba(255,255,255,.92)" }}>
+                Outcome:
+              </strong>{" "}
+              higher conversion, faster response times, and consistent follow-up—24/7.
+            </div>
+          </div>
         </div>
 
-        {/* FOOTER MINI */}
-        <footer style={footerStyles}>
-          <span>© {new Date().getFullYear()} AgentForge · Private beta</span>
-          <span>Made for solo founder, marketer e small teams.</span>
-        </footer>
+        <div style={sectionStyles}>
+          <h2 style={sectionTitleStyles}>What we automate</h2>
+          <p style={sectionSubtitleStyles}>
+            We focus on workflows that directly impact revenue and operational load.
+            Start with one agent, prove ROI, then scale to a system.
+          </p>
+
+          <div style={gridStyles}>
+            <div style={cardStyles}>
+              <div style={cardTitleStyles}>Sales follow-up</div>
+              <p style={cardTextStyles}>
+                Qualify inbound leads, answer objections, book calls, and chase
+                dormant opportunities automatically.
+              </p>
+            </div>
+            <div style={cardStyles}>
+              <div style={cardTitleStyles}>Customer support</div>
+              <p style={cardTextStyles}>
+                Deflect repetitive tickets, keep SLAs under control, and escalate
+                only the cases that need humans.
+              </p>
+            </div>
+            <div style={cardStyles}>
+              <div style={cardTitleStyles}>Ops & reporting</div>
+              <p style={cardTextStyles}>
+                Summaries, status updates, task creation, and structured reporting
+                pulled from your knowledge sources.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style={sectionStyles}>
+          <h2 style={sectionTitleStyles}>How it works</h2>
+          <p style={sectionSubtitleStyles}>
+            A simple, ROI-driven process designed to get you to a working deployment
+            fast—without building a big engineering team.
+          </p>
+
+          <div style={stepStyles}>
+            <div style={stepBadgeStyles}>1</div>
+            <div>
+              <div style={{ fontWeight: 900, marginBottom: ".25rem" }}>
+                Scope the outcome
+              </div>
+              <div style={{ color: "rgba(255,255,255,.75)", lineHeight: 1.55 }}>
+                We define the job-to-be-done, success metrics, guardrails, and the
+                fastest path to measurable ROI.
+              </div>
+            </div>
+          </div>
+
+          <div style={stepStyles}>
+            <div style={stepBadgeStyles}>2</div>
+            <div>
+              <div style={{ fontWeight: 900, marginBottom: ".25rem" }}>
+                Connect your knowledge
+              </div>
+              <div style={{ color: "rgba(255,255,255,.75)", lineHeight: 1.55 }}>
+                We plug in your offers, policies, FAQs, docs, and product sheets so
+                the agent answers with your truth—not generic internet guesses.
+              </div>
+            </div>
+          </div>
+
+          <div style={stepStyles}>
+            <div style={stepBadgeStyles}>3</div>
+            <div>
+              <div style={{ fontWeight: 900, marginBottom: ".25rem" }}>
+                Deploy + track performance
+              </div>
+              <div style={{ color: "rgba(255,255,255,.75)", lineHeight: 1.55 }}>
+                You ship it on your site. We track conversations, leads, and
+                conversion. Then we iterate on what moves revenue.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style={footerCtaStyles}>
+          <div>
+            <p style={footerCtaTitle}>Ready to replace work with AI?</p>
+            <p style={footerCtaText}>
+              Start with one high-impact agent, prove ROI, then expand to a full AI
+              workforce across sales, support, and operations.
+            </p>
+          </div>
+          <button style={primaryButtonStyles}>Get your AI system</button>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
